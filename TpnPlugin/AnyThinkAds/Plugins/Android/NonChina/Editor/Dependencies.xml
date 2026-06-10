@@ -1,0 +1,10 @@
+<dependencies>
+    <androidPackages>
+        <repositories>
+            <repository>https://jfrog.anythinktech.com/artifactory/overseas_sdk</repository>
+        </repositories>
+        <!-- core-tpn 使用 Assets/Plugins/Android/libs/core-tpn-6.5.52.aar，避免与 Maven 双声明 -->
+        <androidPackage spec="androidx.appcompat:appcompat:1.6.1"/>
+        <androidPackage spec="androidx.browser:browser:1.4.0"/>
+    </androidPackages>
+</dependencies>

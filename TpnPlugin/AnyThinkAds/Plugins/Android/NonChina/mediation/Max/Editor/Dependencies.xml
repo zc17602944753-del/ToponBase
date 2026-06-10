@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dependencies>
+    <androidPackages>
+        <!-- Max SDK -->
+        <androidPackage spec="com.applovin:applovin-sdk:13.5.0"/>
+        <!-- TopOn ↔ Max 桥接 -->
+        <androidPackage spec="io.github.alex-only:max_adapter_tu:1.2.9"/>
+
+        <!-- Max Mediation Adapters（版本与 TopOn 侧底层 SDK 对齐） -->
+        <androidPackage spec="com.applovin.mediation:google-adapter:24.9.0.0"/>
+        <androidPackage spec="com.applovin.mediation:mintegral-adapter:17.0.61.0"/>
+        <androidPackage spec="com.applovin.mediation:bytedance-adapter:7.8.5.9.0"/>
+        <androidPackage spec="com.applovin.mediation:vungle-adapter:7.6.1.0"/>
+        <androidPackage spec="com.applovin.mediation:ironsource-adapter:9.2.0.0.0"/>
+        <androidPackage spec="com.applovin.mediation:fyber-adapter:8.4.2.0"/>
+        <androidPackage spec="com.applovin.mediation:bigoads-adapter:5.7.0.0"/>
+        <androidPackage spec="com.applovin.mediation:unityads-adapter:4.12.5.0"/>
+        <!-- facebook-adapter 会拉入 audience-network-sdk:6.21.0，该版本在 AGP 7.4.2 D8 上有 NPE；如打包失败请注释掉 -->
+        <androidPackage spec="com.applovin.mediation:facebook-adapter:6.21.0.0"/>
+    </androidPackages>
+</dependencies>
