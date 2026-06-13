@@ -86,8 +86,7 @@ namespace AnyThink.Scripts.Editor
             gradlePropertiesUpdated.Add(PropertyAndroidX + EnableProperty);
             gradlePropertiesUpdated.Add(PropertyJetifier + EnableProperty);
 #endif
-            // Disable dexing using artifact transform (it causes issues for ExoPlayer with Gradle plugin 3.5.0+)
-            gradlePropertiesUpdated.Add(PropertyDexingArtifactTransform + DisableProperty);
+            // android.enableDexingArtifactTransform 在 AGP 8.3 已移除，注入该属性会导致 Gradle 评估失败。
 
             try
             {
