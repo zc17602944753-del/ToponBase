@@ -70,21 +70,11 @@ namespace AnyThink.Scripts.Editor
             }
 
 #if UNITY_2019_3_OR_NEWER
-            //如果是国内，则根据选择来决定是否用AndroidX
-            if (isChina)    
-            {
-                if (!ATConfig.enableAndroidX()) {
-                    EnableProperty = "=false"; 
-                } else {
-                    EnableProperty = "=true"; 
-                }
-            } else {
-                EnableProperty = "=true"; 
-            }
-            ATLog.log("[AnyThink] AndroidX EnableProperty" + EnableProperty);
-            // Enable AndroidX and Jetifier properties 
-            gradlePropertiesUpdated.Add(PropertyAndroidX + EnableProperty);
-            gradlePropertiesUpdated.Add(PropertyJetifier + EnableProperty);
+            // AndroidX + Jetifier 对海外包必须为 true（所有依赖库均已迁移至 AndroidX）。
+            // 原有的 isChina 条件判断会在 Integration Manager 配置为国内时错误写入 false，
+            // 导致 checkReleaseDuplicateClasses 阶段报 useAndroidX 未启用的构建失败。
+            gradlePropertiesUpdated.Add(PropertyAndroidX + "=true");
+            gradlePropertiesUpdated.Add(PropertyJetifier + "=true");
 #endif
             // android.enableDexingArtifactTransform 在 AGP 8.3 已移除，注入该属性会导致 Gradle 评估失败。
 
