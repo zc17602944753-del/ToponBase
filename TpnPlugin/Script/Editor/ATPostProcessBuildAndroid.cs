@@ -231,7 +231,7 @@ namespace AnyThink.Scripts.Editor
                 Directory.CreateDirectory(resXmlPath);
             }
             
-            saveFile("Assets/TpnPlugin/Script/Editor/secmtp_network_security_config.xml", resXmlPath);
+            saveFile("Assets/Topon/TpnPlugin/Script/Editor/secmtp_network_security_config.xml", resXmlPath);
         }
 
         public static void saveFile(string filePathName , string toFilesPath)
